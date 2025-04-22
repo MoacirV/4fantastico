@@ -21,13 +21,13 @@ html{
 /* Start Header */
 
 header{
-    position: fixed;
     height: 80px;
     background-color: var(--header-color);
     width: 100%;
 }
 
 body{
+    width: 100%;
     color: white;
     font-family: 'Poetsen One', sans-serif;
     font-weight: normal;
@@ -88,16 +88,14 @@ nav ul li a:hover{
 
 main{
     width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 80px);
 }
 
 section{
-    overflow: hidden;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 #home,
@@ -112,8 +110,23 @@ section{
     background-color: var(--bg-second-color);
 }
 
+.container-about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15% 8%;
+    height: 100%;
+}
+
 .box-home {
     height: 100%;
+    width: 100%;
+}
+
+.box-home img{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
 }
   
 .box-text{
@@ -153,7 +166,7 @@ section{
 
 .content{
     font-size: 1.10rem;
-    padding: 0 12rem;
+    padding: 4rem 12rem;
     gap: 7%;
     display: flex;
     justify-content: space-between;
@@ -243,3 +256,57 @@ span{
 }
 
 /* End Footer */
+
+/* Start Responsividade */
+
+@media screen and (max-width:1635px){
+    .content{
+        flex-direction: column;
+    }
+
+    .content .box-two h1{
+        font-size: 1.7rem;
+    }
+    .content .box-two span{
+        font-size: 1.2rem;
+    }
+    .content .box-two p{
+        font-size: 1rem;
+    }
+
+    .box-one img{
+        height: 25rem;
+    }
+    
+}
+
+@media screen and (max-width: 1100px) {
+   .box-one img{
+    width: 300px;
+    height: 300px;
+   }
+
+   .content .box-two h1{
+    font-size: 1.2rem;
+}
+.content .box-two span{
+    font-size: .9rem;
+}
+.content .box-two p{
+    font-size: .9rem;
+}
+
+
+}
+
+@media screen and (max-width: 950px) {
+    header .container nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 680px) {
+   
+}
+
+/* End Responsividade */
